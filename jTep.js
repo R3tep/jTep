@@ -4,7 +4,7 @@
 /********************************/
 
 var d = document,  
-  w = window;
+    w = window;
 
 /****** Shortcut for console.log ******/
 var _log = function (s) {  
@@ -27,10 +27,10 @@ var _qs = function (qs, number) {
 var _parse = function (string) {  
   var s;  
   try {  
-  	s = JSON.parse(string);  
+    s = JSON.parse(string);  
   } catch (e) {   
-  	s = string;   
-  	_log(`ERROR : ${e.message}`);   
+    s = string;   
+    _log(`ERROR : ${e.message}`);   
   } finally { return s; };
 }
 
@@ -43,37 +43,37 @@ function Ajax(json) {
   this.errorFunc   = function () {};
   
   this.success = function (func) {  
-  	_this.successFunc = func;   
+    _this.successFunc = func;   
   }
   
   this.error = function (func) {  
-  	_this.errorFunc = func;   
+    _this.errorFunc = func;   
   }
   
   this.successExec = function (exec, request) {  
-  	exec(request.responseText);  
+    exec(request.responseText);  
   };
   
   this.errorExec = function (exec, request) {  
-  	exec(request.responseText);  
+    exec(request.responseText);  
   };
   
   if (!json.type) {  
-  	json.type = "application/x-www-form-urlencoded";  
+    json.type = "application/x-www-form-urlencoded";  
   }
   
   var request;  
   if (w.XMLHttpRequest) {  
-  	request = new XMLHttpRequest();  
+    request = new XMLHttpRequest();  
   } else {  
-  	request = new ActiveXObject("Microsoft.XMLHTTP");  
+    request = new ActiveXObject("Microsoft.XMLHTTP");  
   }  
   request.onreadystatechange = function () {  
-  	if (request.readyState == 4 && request.status == 200) {  
-  	  _this.successExec(_this.successFunc, request);  
-  	}else if (request.readyState == 4) {  
-  	  _this.errorExec(_this.errorFunc, request);  
-  	}  
+    if (request.readyState == 4 && request.status == 200) {  
+      _this.successExec(_this.successFunc, request);  
+    }else if (request.readyState == 4) {  
+      _this.errorExec(_this.errorFunc, request);  
+    }  
   }
   
   request.open("POST", json.url, true);  
@@ -81,14 +81,14 @@ function Ajax(json) {
   
   var s = '';  
   if (typeof json.params == 'object' && json.params.constructor.name != 'FormData') {  
-  	for (var key in json.params) {  
-  	  s.length && (s += '&');  
-  	  if (json.params.hasOwnProperty(key)) {  
-  		s += `${key}=${json.params[key]}`;  
-  	  }  
-  	}  
+    for (var key in json.params) {  
+      s.length && (s += '&');  
+      if (json.params.hasOwnProperty(key)) {  
+        s += `${key}=${json.params[key]}`;  
+      }  
+    }  
   } else {  
-  	s = json.params;  
+    s = json.params;  
   }  
   request.send(s);
 }
