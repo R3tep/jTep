@@ -1,0 +1,147 @@
+
+@font-face {
+    font-family: "Fira-Ei";
+    font-style: normal;
+    font-weight: 400;
+    src: url("fonts/fira-sans/FiraSans-ExtraLight.otf") format("truetype");
+}
+
+@font-face {
+    font-family: "Fira-Bo";
+    src: url("fonts/fira-sans/FiraSans-Book.otf") format("truetype");;
+}
+
+
+
+html {}
+
+body {
+	font-family: Fira-Ei;
+    font-size: 25px;
+    font-style: italic;
+}
+
+h1, h2, h3, h4, h5 {
+	font-family: Fira-Bo;
+	font-style: normal;
+}
+
+hr {
+	width: 100%;
+	border-color: rgba(192, 101, 21, 0.25);
+	margin: 25px 0;
+}
+
+a {
+	text-decoration: none;
+	color: rgba(50, 50, 50, 0.85);
+}
+
+a:hover {
+	color: rgba(50, 50, 50, 0.65);
+}
+
+input {
+	font-size: 25px;
+	width: 350px;
+	display: block;
+	cursor: pointer;
+	margin: 15px;
+}
+
+form , 
+.result {
+	width: 40%;
+	display: inline-table;
+}
+
+.result {
+	position: relative;
+    top: -105px;
+}
+
+input[type='password'],
+input[type='email'],
+input[type='text'] {
+	font-family: Fira-Bo;
+	background-color: rgb(250, 250, 250);
+    color: rgba(50, 50, 50, 0.85);
+    height: 30px;
+    padding: 5px;
+}
+
+input[type='submit'], 
+button {
+	font-family: Fira-Bo;
+	color: rgba(50, 50, 50, 0.85);
+	border: 0px;
+	height: 40px;
+	background-color: #e8e8e8;
+	cursor: pointer;
+}
+
+input[type='submit']:active,
+button:active {
+	box-shadow: inset 0 0 0 5px rgba(50, 50, 50, 0.02);
+}
+
+input[type='submit']:hover,
+button:hover,
+input[type='password']:hover,
+input[type='email']:hover, 
+input[type='text']:hover{
+  opacity: 0.75;
+}
+
+.code {
+	background-color: #eee;
+	font-size: 12px;
+	font-style: normal;
+	padding: 5px;
+}
+
+
+.container {
+	margin: 0 auto;
+	max-width: 1200px;
+	min-width: 600px;
+}
+
+.rightContainer {
+	position: relative;
+	display: inline-table;
+	width: 74%;
+}
+
+.leftContainer {
+	position: relative;
+	display: inline-table;
+	width: 20%;
+}
+
+.leftContainer > ul {
+	position: fixed;
+	margin: 0;
+}
+
+/***** CSS FOR SAMPLE CODE *****/
+
+.str {
+	color: #f57f17;
+}
+
+.pro {
+	color: #b71c1c;
+}
+
+.fun {
+	color: #0d47a1;
+}
+
+.ev {
+	color: #1b5e20;
+}
+
+.com {
+	color: rgba(50, 50, 50, 0.85);
+}
