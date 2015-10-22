@@ -1,87 +1,87 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
-		<meta content="width=device-width, initial-scale=1" name="viewport">
-		<title>Test jTep</title>
-
-		<link href="main.css" type="text/css" rel="stylesheet" />
-
-		<script type="text/javascript" src="../jTep.js"></script>
-		<script type="text/javascript" src="main.js"></script>
-	</head>
-	<body>
-		<div class='container'>
-			<div class='leftContainer'>
-				<ul>
-					<li>
-						<a href='#ajaxSection' >Ajax</a>
-					</li>
-				</ul>
-			</div>
-			<div class='rightContainer'>
-				<h2>Welcome to jTep Demo</h2>
-
-				<h3 id='ajaxSection'>&nbsp;&nbsp;&nbsp;&nbsp;Ajax</h3>
-
-				<p>Classic</p>
-
-				<form id='ajax'>
-					<input name="name" type="text" placeholder="Name" />
-					<input type="submit" value="Send" />
-				</form>
-
-				<div id='resultAjax' class='result'></div>
-
-				<hr/>
-
-				<div class='code'>
-					<code>
-						<span class='fun'>window</span><span class='ev'>.onload</span> <span class='pro'>=</span> <span class='fun'>function</span> () { <br/>
-						&nbsp;&nbsp;&nbsp;&nbsp;<span class='fun'>_id</span>(<span class='str'>'ajax'</span>)<span class='fun'>.addEventListener</span>(<span class='str'>'submit'</span>, sendAjax); <br />
-						};<br />
-						<br />
-		                <span class='fun'>function</span> <span class='ev'>sendAjax</span> (e) {<br />
-			            &nbsp;&nbsp;&nbsp;&nbsp;e<span class='fun'>.preventDefault</span>();<br />
-			            <br />
-						&nbsp;&nbsp;&nbsp;&nbsp;<span class='fun'>var</span> call <span class='pro'>= new</span> <var>Ajax</var> ({<br />
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;url: <span class='str'>'script.php'</span>,<br />
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;params: {<br />
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;name: <span class='fun'>_qs</span>(<span class='str'>'[name="name"]'</span>).value<br />
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
-						&nbsp;&nbsp;&nbsp;&nbsp;});<br />
-						<br />
-						&nbsp;&nbsp;&nbsp;&nbsp;call<span class='fun'>.success</span>(<span class='fun'>function</span> (data) {<br />
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class='fun'>_log</span>(data);<br />
-						&nbsp;&nbsp;&nbsp;&nbsp;});<br />
-						&nbsp;&nbsp;&nbsp;&nbsp;call<span class='fun'>.error</span>(<span class='fun'>function</span> (data) {<br />
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class='fun'>_log</span>(data);<br />
-						&nbsp;&nbsp;&nbsp;&nbsp;});<br />
-						<br />
-						&nbsp;&nbsp;&nbsp;&nbsp;<span class='pro'>return</span> false;<br />
-						}<br />
-					</code>
-				</div>	
-
-				<hr/>
-
-				<p>FormData</p>
-
-				<form id='ajaxForm'>
-					<input name="name" type="text" placeholder="Name" />
-					<input type="submit" value="Send" />
-				</form>
-
-				<div id='resultAjax' class='result'></div>
-
-				<hr/>
-
-				<div class='code'>
-					<code>
-						<span class='com'>/****** Html not added ******/</span>
-					</code>
-				</div>
-			</div>		
-		</div>
-	</body>
+<html>  
+  <head>  
+  	<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">  
+  	<meta content="width=device-width, initial-scale=1" name="viewport">  
+  	<title>Test jTep</title>
+  
+  	<link href="main.css" type="text/css" rel="stylesheet" />
+  
+  	<script type="text/javascript" src="../jTep.js"></script>  
+  	<script type="text/javascript" src="main.js"></script>  
+  </head>  
+  <body>  
+  	<div class='container'>  
+  	  <div class='leftContainer'>  
+  	    <ul>  
+  		  <li>  
+  		    <a href='#ajaxSection' >Ajax</a>  
+  		  </li>  
+  	    </ul>  
+  	  </div>  
+  	  <div class='rightContainer'>  
+  	    <h2>Welcome to jTep Demo</h2>
+  
+        <h3 id='ajaxSection'>&nbsp;&nbsp;&nbsp;&nbsp;Ajax</h3>
+  
+  	    <p>Classic</p>
+  
+  	    <form id='ajax'>  
+  		  <input name="name" type="text" placeholder="Name" />  
+		  <input type="submit" value="Send" />  
+  	    </form>
+  
+  	    <div id='resultAjax' class='result'></div>
+  
+  	    <hr/>
+  
+  	    <div class='code'>  
+  		  <code>  
+  		    <span class='fun'>window</span><span class='ev'>.onload</span> <span class='pro'>=</span> <span class='fun'>function</span> () { <br/>  
+  		    &nbsp;&nbsp;&nbsp;&nbsp;<span class='fun'>_id</span>(<span class='str'>'ajax'</span>)<span class='fun'>.addEventListener</span>(<span class='str'>'submit'</span>, sendAjax); <br />  
+  		    };<br />  
+  		    <br />  
+            <span class='fun'>function</span> <span class='ev'>sendAjax</span> (e) {<br />  
+  	        &nbsp;&nbsp;&nbsp;&nbsp;e<span class='fun'>.preventDefault</span>();<br />  
+  	        <br />  
+		    &nbsp;&nbsp;&nbsp;&nbsp;<span class='fun'>var</span> call <span class='pro'>= new</span> <var>Ajax</var> ({<br />  
+		    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;url: <span class='str'>'script.php'</span>,<br />  
+  		    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;params: {<br />  
+  		    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;name: <span class='fun'>_qs</span>(<span class='str'>'[name="name"]'</span>).value<br />  
+  		    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />  
+  		    &nbsp;&nbsp;&nbsp;&nbsp;});<br />  
+  		    <br />  
+  		    &nbsp;&nbsp;&nbsp;&nbsp;call<span class='fun'>.success</span>(<span class='fun'>function</span> (data) {<br />  
+  		    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class='fun'>_log</span>(data);<br />  
+  		    &nbsp;&nbsp;&nbsp;&nbsp;});<br />  
+  		    &nbsp;&nbsp;&nbsp;&nbsp;call<span class='fun'>.error</span>(<span class='fun'>function</span> (data) {<br />  
+  		    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class='fun'>_log</span>(data);<br />  
+  		    &nbsp;&nbsp;&nbsp;&nbsp;});<br />  
+  		    <br />  
+  		    &nbsp;&nbsp;&nbsp;&nbsp;<span class='pro'>return</span> false;<br />  
+  	 	    }<br />  
+  		  </code>  
+  	    </div>	
+  
+ 	    <hr/>
+  
+ 	    <p>FormData</p>
+  
+ 	    <form id='ajaxForm'>  
+ 		  <input name="name" type="text" placeholder="Name" />  
+  		  <input type="submit" value="Send" />  
+  	    </form>
+  
+  	    <div id='resultAjax' class='result'></div>
+  
+  	    <hr/>
+  
+  	    <div class='code'>  
+  		  <code>  
+  		    <span class='com'>/****** Html not added ******/</span>  
+  		  </code>  
+  	    </div>  
+      </div>		  
+    </div>  
+  </body>
 </html
