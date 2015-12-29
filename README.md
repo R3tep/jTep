@@ -1,2 +1,2 @@
 # jTep
-This project is in the development phase
+Developing Phase
