@@ -1,4 +1,5 @@
 'use strict';
+
 /********************************/
 /******** Def global var ********/
 /********************************/
@@ -16,11 +17,10 @@ var _id = function (id) {
   return d.getElementById(id);
 };
 
-
-/****** Shortcut for query selector all ******/
-var _qs = function (qs, number) {  
-  number = (typeof number !== 'undefined' ? number : 0);  
-  return d.querySelectorAll(qs)[number];
+/****** Shortcut for query selector all (index is optional) ******/
+var _qs = function (qs, index) { 
+  if (typeof index !== 'undefined') { return d.querySelectorAll(qs)[index] } 
+  else { return d.querySelectorAll(qs) };  
 };
 
 /****** Shortcut for parse function ******/
@@ -80,15 +80,13 @@ function Ajax(json) {
   !json.formdata && request.setRequestHeader("Content-type", json.type);
   
   var s = '';  
-  if (typeof json.params == 'object' && json.params.constructor.name != 'FormData') {  
+  if (typeof json.params == 'object' && !json.formdata) {
     for (var key in json.params) {  
       s.length && (s += '&');  
       if (json.params.hasOwnProperty(key)) {  
         s += `${key}=${json.params[key]}`;  
       }  
     }  
-  } else {  
-    s = json.params;  
-  }  
+  } else { s = json.params; }  
   request.send(s);
 }
